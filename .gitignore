@@ -2,3 +2,7 @@
 /node_modules
 .sass-cache/*
 .env
+
+.yarn/cache
+.yarn/install-state.gz
+.pnp.cjs

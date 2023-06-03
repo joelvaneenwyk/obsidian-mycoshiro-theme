@@ -2,7 +2,7 @@
 
 Find detailed documentation at [minimal.guide](https://minimal.guide)
 
-Minimal is an [Obsidian](https://obsidian.md/) theme for desktop, mobile and tablet. Customize colors, fonts and more with the companion plugins [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) and [Hider](https://github.com/kepano/obsidian-hider). Winner of Obsidian's official [Best Theme award](https://forum.obsidian.md/t/best-of-2020-awards-results/11217) ✨ 
+Minimal is an [Obsidian](https://obsidian.md/) theme for desktop, mobile and tablet. Customize colors, fonts and more with the companion plugins [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) and [Hider](https://github.com/kepano/obsidian-hider). Winner of Obsidian's official [Best Theme award](https://forum.obsidian.md/t/best-of-2020-awards-results/11217) ✨
 
 Support development: **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy me a coffee](https://www.buymeacoffee.com/kepano)
 
@@ -100,7 +100,7 @@ Controls images, tables and iframes. These settings can also be enabled on a per
 
 ### Preset color schemes
 
-Minimal offers color schemes that can be separately selected for light and dark mode using the [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) plugin. Color schemes include Dracula, Everforest, Gruvbox, macOS, Nord, Notion, Solarized, and Things. 
+Minimal offers color schemes that can be separately selected for light and dark mode using the [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) plugin. Color schemes include Dracula, Everforest, Gruvbox, macOS, Nord, Notion, Solarized, and Things.
 
 ![Minimal Theme Settings](/assets/minimal-color-schemes.gif)
 
@@ -140,13 +140,14 @@ Image filters can be added to create the following effects. Use them by adding t
 | `#invert`  | Invert images in dark mode — ideal for charts and handwriting on light backgrounds |
 | `#invertW` | Invert images in light mode — ideal for charts and handwriting on dark backgrounds |
 | `#circle`  | Crop image to a circle                                                             |
-| `#outline` | Add outline around image                                                           | 
+| `#outline` | Add outline around image                                                           |
 
 ## CSS helper classes
 
 CSS helper classes can be added on a per-file basis using the `cssClasses` [YAML front matter key](https://help.obsidian.md/Advanced+topics/YAML+front+matter). These classes are composable, so you can include more than one to combine effects.
 
-For example, use the following code at the top of your file to enable cards layout: 
+For example, use the following code at the top of your file to enable cards layout:
+
 ```
 ---
 cssClasses: cards
@@ -154,6 +155,7 @@ cssClasses: cards
 ```
 
 ### Image grids
+
 Turns consecutive images into columns. To make a new row, add an extra line break between images. [Learn more.](https://minimal.guide/Block+types/Image+grids)
 
 | Class          | Description                                         |
@@ -161,6 +163,7 @@ Turns consecutive images into columns. To make a new row, add an extra line brea
 | `img-grid`     | Activate image grids |
 
 ### Line width control for tables, images and iframes
+
 Controls the width of elements by type. [Learn more.](https://github.com/kepano/obsidian-minimal/releases/tag/4.2.0)
 
 | Class                                   | Description                           |
@@ -207,7 +210,6 @@ Controls the row and column styling for tables. [Learn more.](https://github.com
 | Class          | Description                                         |
 | :------------- | :-------------------------------------------------- |
 | `embed-strict` | Transclusions appear seamlessly in the flow of text |
-
 
 ## Alternate checkboxes
 
@@ -302,7 +304,7 @@ Minimal for Obsidian apps is licensed under the MIT License which allows you to 
 
 **If you would like to distribute a fork of Minimal or part of its code, please keep my [Buy me a coffee](https://www.buymeacoffee.com/kepano) link present in your Readme.**
 
-Minimal is frequently updated to stay current with the latest version of Obsidian. To make it easy to stay current with the latest improvements, I recommend using [Github's fork feature](https://docs.github.com/en/get-started/quickstart/fork-a-repo) so that you can merge the latest changes into your fork. If you have any questions don't hesitate to reach me in the Obsidian Discord group. 
+Minimal is frequently updated to stay current with the latest version of Obsidian. To make it easy to stay current with the latest improvements, I recommend using [Github's fork feature](https://docs.github.com/en/get-started/quickstart/fork-a-repo) so that you can merge the latest changes into your fork. If you have any questions don't hesitate to reach me in the Obsidian Discord group.
 
 ### Minimal for Obsidian Publish
 
@@ -310,6 +312,6 @@ Minimal for Obsidian Publish is a separate version of Minimal which follows the 
 
 ## Disclaimer
 
-This theme is provided as is, and is designed for my personal use of Obsidian on macOS. As such it is not thoroughly tested across all operating systems and use cases. 
+This theme is provided as is, and is designed for my personal use of Obsidian on macOS. As such it is not thoroughly tested across all operating systems and use cases.
 
 This theme modifies significant parts of the Obsidian interface, so it may break with future updates. It may also be incompatible with other bits of custom CSS you have.
