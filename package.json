@@ -3,13 +3,13 @@
     "version": "1.0.0",
     "type": "commonjs",
     "main": "esbuild.config.mjs",
-    "private": true,
     "scripts": {
         "grunt": "grunt",
         "dev": "node esbuild.config.mjs dev",
         "build": "node esbuild.config.mjs debug"
     },
     "dependencies": {
+        "@yarnpkg/sdks": "^3.0.0-rc.50",
         "autoprefixer": "^10.4.15",
         "builtin-modules": "^3.3.0",
         "dotenv": "^16.3.1",

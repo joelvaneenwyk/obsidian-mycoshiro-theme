@@ -1,12 +1,16 @@
 {
-    "cSpell.words": [
-        "Ango",
-        "cssmin",
-        "dataviewjs",
-        "Gruntfile",
-        "gruntjs",
-        "kepano",
-        "loadconst",
-        "unminified"
-    ]
+  "cSpell.words": [
+    "Ango",
+    "cssmin",
+    "dataviewjs",
+    "Gruntfile",
+    "gruntjs",
+    "kepano",
+    "loadconst",
+    "unminified"
+  ],
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  }
 }
