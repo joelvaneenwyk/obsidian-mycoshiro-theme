@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                     /* sourcemap: 'none' */
                 },
                 files: {
-                    'src/css/main.css': 'src/scss/index.scss'
+                    'dist/main.css': 'src/scss/index.scss'
                 }
             },
             dist: {
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                     /* sourcemap: 'none' */
                 },
                 files: {
-                    'src/css/main.min.css': 'src/scss/index.scss'
+                    'dist/main.min.css': 'src/scss/index.scss'
                 }
             }
         },
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'src/css/main.min.css': 'src/css/main.min.css'
+                    'dist/main.min.css': 'dist/main.min.css'
                 }
             }
         },
@@ -66,12 +66,12 @@ module.exports = function (grunt) {
         concat_css: {
             dist: {
                 files: {
-                    'theme.css': ['src/css/license.css', 'src/css/main.min.css', 'src/css/plugin-compatibility.css', 'src/css/style-settings.css']
+                    'dist/theme.css': ['src/css/license.css', 'dist/main.min.css', 'src/css/plugin-compatibility.css', 'src/css/style-settings.css']
                 }
             },
             unminified: {
                 files: {
-                    'Minimal.css': ['src/css/license.css', 'src/css/main.css', 'src/css/plugin-compatibility.css', 'src/css/style-settings.css']
+                    'dist/Minimal.css': ['src/css/license.css', 'dist/main.css', 'src/css/plugin-compatibility.css', 'src/css/style-settings.css']
                 }
             }
         },
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
         copy: {
             local: {
                 expand: true,
-                src: 'theme.css',
+                src: 'dist/theme.css',
                 dest: process.env.OBSIDIAN_PATH,
                 rename: function (dest, src) {
                     return dest + 'theme.css';
