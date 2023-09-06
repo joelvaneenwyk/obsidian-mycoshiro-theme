@@ -6,11 +6,15 @@
     "Gruntfile",
     "gruntjs",
     "kepano",
+    "lezer",
     "loadconst",
+    "loglevel",
+    "outfile",
     "unminified"
   ],
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
-  }
+  },
+  "eslint.nodePath": ".yarn/sdks"
 }
