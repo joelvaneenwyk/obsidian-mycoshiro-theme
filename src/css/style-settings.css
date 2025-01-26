@@ -298,7 +298,7 @@ settings:
 		title: Code font size
 		description: Accepts any CSS font-size value
 		type: variable-text
-		default: 13px
+		default: 0.8em
 	-
 		id: minimal-code-scroll
 		title: Scroll long lines
@@ -1074,24 +1074,6 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: ig-adjust-reading
-		title: Horizontal adjustment in reading mode
-		type: variable-number-slider
-		default: -0.65
-		min: -1.2
-		max: 0
-		step: 0.05
-		format: em
-	-
-		id: ig-adjust-edit
-		title: Horizontal adjustment in edit mode
-		type: variable-number-slider
-		default: -1
-		min: -10
-		max: 10
-		step: 1
-		format: px
-	-
 		id: indentation-guide-color
 		title: Indentation guide color
 		type: variable-themed-color
@@ -1203,6 +1185,7 @@ settings:
 		title: Gutter background
 		type: variable-themed-color
 		format: hex
+		opacity: true
 		default-light: '#'
 		default-dark: '#'
 	-  
@@ -1367,12 +1350,11 @@ settings:
 		type: class-toggle
 		default: false
 	-
-		id: metadata-label-width
+		id: metadata-label-width-multiplier
 		title: Property name width
 		description: Width for the name of the property
 		type: variable-number-slider
-		format: rem
-		default: 8
+		default: 9
 		min: 4
 		max: 12
 		step: 0.25
@@ -1382,11 +1364,6 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-	-
-		id: sidebar-lines-off
-		title: Hide sidebar relationship lines
-		description: Turns off lines in file navigation
-		type: class-toggle
 	-
 		id: sidebar-tabs-style
 		title: Sidebar tab style
@@ -1407,9 +1384,52 @@ settings:
 				label: Modern wide
 				value: sidebar-tabs-wide
 			-
+				label: Square
+				value: sidebar-tabs-plain-square
+			-
 				label: Underline
 				value: sidebar-tabs-underline
-
+	-
+		id: sidebar-tabs-names
+		title: Sidebar tab names
+		type: class-select
+		allowEmpty: false
+		default: tab-names-off
+		options:
+			-
+				label: Hidden
+				value: tab-names-off
+			-
+				label: Visible
+				value: tab-names-on
+			-
+				label: Single tab only
+				value: tab-names-single
+	-
+		id: vault-profile-display
+		title: Vault profile position
+		type: class-select
+		allowEmpty: false
+		default: vault-profile-default
+		options:
+			-
+				label: Bottom
+				value: vault-profile-default
+			-
+				label: Top
+				value: vault-profile-top
+	-
+		id: hide-help
+		title: Hide help button
+		description: 
+		type: class-toggle
+		default: false
+	-
+		id: hide-settings
+		title: Hide settings button
+		description: 
+		type: class-toggle
+		default: false
 	-
 		id: mobile-left-sidebar-width
 		title: Mobile left sidebar width
@@ -1433,7 +1453,7 @@ settings:
 	-
 		id: ribbon-style
 		title: Ribbon style
-		description: Ribbon menu can be hidden using the Hider plugin
+		description: Display options for ribbon menu. Ribbon must be turned on in Obsidian Appearance settings for these options to work.
 		type: class-select
 		allowEmpty: false
 		default: ribbon-hidden
@@ -1442,8 +1462,14 @@ settings:
 				label: Default
 				value: ribbon-hidden
 			-
-				label: Bottom left hover
-				value: ribbon-bottom-left-hover
+				label: Expand (vertical)
+				value: ribbon-vertical-expand
+			-
+				label: Hover (vertical)
+				value: ribbon-bottom-left-hover-vertical
+			-
+				label: Hover (horizontal)
+				value: ribbon-bottom-left-hover	
 	-
 		id: tables
 		title: Tables
@@ -1456,6 +1482,16 @@ settings:
 		description: All of the following settings apply to all tables globally. To turn on these features on a per-note basis use helper classes. See documentation.
 		type: variable-text
 		default: 1em
+	-
+		id: table-column-min-width
+		title: Minimum column width
+		type: variable-text
+		default: 6ch
+	-
+		id: table-column-max-width
+		title: Maximum column width
+		type: variable-text
+		default: none
 	-
 		id: maximize-tables-off
 		title: Maximize table width 
@@ -1513,6 +1549,12 @@ settings:
 		id: table-numbers
 		title: Row numbers
 		description: Display row numbers in tables globally
+		type: class-toggle
+		default: false
+	-
+		id: table-center
+		title: Center small tables
+		description: Make small tables centered
 		type: class-toggle
 		default: false
 	-
@@ -1630,6 +1672,18 @@ settings:
 				label: Center flipped
 				value: tab-stack-center-flipped
 	-
+		id: tab-stacked-spine-order
+		title: Spine element order
+		type: variable-select
+		default: row
+		options:
+			-
+				label: Default
+				value: row
+			-
+				label: Reversed
+				value: row-reverse
+	-
 		id: tags
 		title: Tags
 		type: heading
@@ -1745,6 +1799,15 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
+		id: text-formatting
+		title: Markdown syntax color
+		description: Markdown formatting syntax text color
+		type: variable-themed-color
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
 		id: italic-color
 		title: Italic text color
 		type: variable-themed-color
@@ -1759,12 +1822,12 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: bold-weight
+		id: bold-modifier
 		title: Bold text weight
 		type: variable-number-slider
-		default: 600
+		default: 200
 		min: 100
-		max: 900
+		max: 500
 		step: 100
 	-
 		id: p-spacing
@@ -1992,18 +2055,14 @@ settings:
 		format: hex
 		default-light: '#'
 		default-dark: '#'
+	- 
+		id: cards-background-hover (hover)
+		title: Card background color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
 
-*/
-
-/* @settings
-name: Minimal Mobile
-id: minimal-mobile
-settings:
-	-
-		id: mobile-toolbar-off
-		title: Disable toolbar
-		description: Turns off mobile toolbar
-		type: class-toggle
 */
 
 /* @settings
@@ -2011,10 +2070,35 @@ name: Minimal Advanced Settings
 id: minimal-advanced
 settings:
 	-
+		id: hide-markdown
+		title: Hide Markdown syntax
+		description: WARNING — This may be confusing because the characters still exist they are just hidden.
+		type: class-toggle
+	-
+		id: hide-settings-desc
+		title: Hide setting descriptions
+		description: Press and hold setting names to see their description.
+		type: class-toggle
+	-
 		id: styled-scrollbars
 		title: Styled scrollbars
 		description: Use styled scrollbars (replaces native scrollbars)
 		type: class-toggle
+	-
+		id: animations
+		title: Animation speed
+		type: class-select
+		default: default
+		options:
+			-
+				label: Normal
+				value: default
+			-
+				label: Disabled
+				value: disable-animations
+			-
+				label: Fast
+				value: fast-animations
 	-
 		id: cursor
 		title: Cursor style
@@ -2045,5 +2129,10 @@ settings:
 		type: variable-number
 		default: 11
 		format: px
+	- 
+		id: mobile-toolbar-off
+		title: Disable mobile toolbar
+		description: Turns off toolbar in editor on mobile
+		type: class-toggle
 
 */

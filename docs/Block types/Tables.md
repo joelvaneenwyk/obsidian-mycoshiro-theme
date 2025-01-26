@@ -8,26 +8,26 @@ cssclasses:
 
 Tables can be created using Markdown, or automatically generated with [[Dataview]]. Tables in Minimal follow your [[Block width]] settings.
 
-# Dataview Settings
+## Dataview Settings
 
 Use [[Minimal Theme Settings]] to define the following settings:
 
 - **Trim Dataview columns** disables text wrapping in [[Dataview]] cells, equivalent of globally setting `table-nowrap` for Dataview only
 - **Dataview maximum column width** sets the width before trimming occurs
 
-# Hotkeys
+## Hotkeys
 
 You can use [[Hotkeys]] to adjust tables globally:
 
 - Cycle between global table width options
 
-# Style Settings
+## Style Settings
 
 Use [[Style Settings]] plugin to control table styles at the global level
 
 ![](https://kep-log.s3-us-west-2.amazonaws.com/minimal-table-styles.png#interface)
 
-# Helper classes
+## Helper classes
 
 Use [[Helper classes]] to control table styles at the individual note level
 
@@ -38,6 +38,7 @@ Use [[Helper classes]] to control table styles at the individual note level
 | `table-wide`    | Table block fills the wide line width               |
 | `table-nowrap`  | Disable line wrapping in table cells                |
 | `table-wrap`    | Force line wrapping in table cells                  |
+| `table-center`  | Center small tables narrower than line width        |
 | `table-numbers` | Add row numbers to tables                           |
 | `table-tabular` | Use tabular figures in tables                       |
 | `table-small`   | Use small font size in tables                       |
@@ -47,4 +48,4 @@ Use [[Helper classes]] to control table styles at the individual note level
 | `col-lines`     | Add borders between table columns                   |
 | `row-alt`       | Add striped background to alternating table rows    |
 | `col-alt`       | Add striped background to alternating table columns |
-| `row-highlight` | Highlight rows on hover                             | 
+| `row-hover`     | Highlight rows on hover                             | 

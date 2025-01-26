@@ -4,14 +4,14 @@ cssclasses:
   - table-col-1-150
   - table-full
 ---
+## How to use helper classes
 
-# How to use helper classes
-
-Helper classes are added using the special `cssclasses` property. In source mode it should look like this:
+Helper classes are added using the special `cssclasses` [property](https://help.obsidian.md/Editing+and+formatting/Properties). In source mode it should look like this:
 
 ```
 ---
-cssclasses: img-grid
+cssclasses:
+  - img-grid
 ---
 ```
 
@@ -20,12 +20,12 @@ To use multiple classes use the following syntax:
 ```
 ---
 cssclasses:
-- cards
-- cards-1-1
+  - cards
+  - cards-1-1
 ---
 ```
 
-# Image grids
+## Image grids
 
 Helper class for [[Image grids]] feature
 
@@ -33,7 +33,7 @@ Helper class for [[Image grids]] feature
 | -------------- | --------------------------------------------------- |
 | `img-grid` | Turns consecutive images into columns. To make a new row, add an extra line break between images. |
 
-# Block widths
+## Block widths
 
 Enable [[Block width]] features on per-file basis, for [[Tables]], [[Image grids]] and [[Iframes]]
 
@@ -45,7 +45,7 @@ Enable [[Block width]] features on per-file basis, for [[Tables]], [[Image grids
 | `table-max`, `img-max`, `iframe-max`    | Block type uses max line width         |
 | `table-100`, `img-100`, `iframe-100`    | Block type uses 100% of the pane width |
 
-# Embeds and transclusions
+## Embeds and transclusions
 
 Controls the styling of [[embeds]]
 
@@ -53,14 +53,15 @@ Controls the styling of [[embeds]]
 | -------------- | --------------------------------------------------- |
 | `embed-strict` | Transclusions appear seamlessly in the flow of text |
 
-# Tables
+## Tables
 
 Controls the row and column styling of [[tables]]
 
 | Class           | Description                                         |
-|:--------------- |:--------------------------------------------------- |
+| :-------------- | :-------------------------------------------------- |
 | `table-nowrap`  | Disable line wrapping in table cells                |
 | `table-wrap`    | Force wrapping in table cells                       |
+| `table-center`  | Center small tables narrower than line width        |
 | `table-numbers` | Add row numbers to tables                           |
 | `table-tabular` | Use tabular figures in tables                       |
 | `table-small`   | Use small font size in tables                       |
@@ -70,16 +71,16 @@ Controls the row and column styling of [[tables]]
 | `col-lines`     | Add borders between table columns                   |
 | `row-alt`       | Add striped background to alternating table rows    |
 | `col-alt`       | Add striped background to alternating table columns |
-| `row-highlight` | Highlight rows on hover                             | 
+| `row-highlight` | Highlight rows on hover                             |
 
-# Cards
+## Cards
 
 Helper class for [[Cards]] feature
 
 | Class                 | Description                                      |
-|:--------------------- |:------------------------------------------------ |
+| :-------------------- | :----------------------------------------------- |
 | `cards` (required)    | Set all Dataview tables to card layout           |
-| `list-cards`          | Set all bullet lists to card layout           | 
+| `list-cards`          | Set all bullet lists to card layout              |
 | `cards-align-bottom`  | Align the last element of a card to the bottom   |
 | `cards-cover`         | Images are resized to fill the defined space     |
 | `cards-16-9`          | Fit images in cards to 16:9 ratio                |

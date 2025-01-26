@@ -19,8 +19,6 @@
 	--metadata-input-background-active: var(--bg1);
 	--modal-border-color: var(--tx1);
 	--modal-border-width: 2px;
-	--nav-item-color-hover: var(--bg1);
-	--nav-item-color-active: var(--bg1);
 	--prompt-border-color: var(--tx1);
 	--prompt-border-width: 2px;
 	--calendar-dot-active: var(--bg1);
@@ -33,10 +31,33 @@
 	--tag-border-color-hover: var(--tx1);
 	--text-on-accent: var(--bg1);
 	--text-on-accent-inverted: var(--bg1);
+	--text-selection: var(--tx1);
+	--vault-profile-color: var(--tx1);
+	--nav-item-color-active: var(--bg1);
+	--nav-item-color-hover: var(--bg1);
 
+	button:hover,
+	::selection {
+		color: var(--bg1);
+	}
+
+	.nav-files-container {
+		--nav-item-color-active: var(--bg1);
+	}
+	.tree-item-self:hover {
+		--nav-collapse-icon-color: var(--bg1);
+	}
+
+	&.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+	&.labeled-nav .mod-left-split .mod-top .workspace-tab-header.is-active,
 	&.tabs-modern {
 		--minimal-tab-text-color-active: var(--bg1);
+		--tab-text-color-focused: var(--bg1);
 		--tab-text-color-focused-active-current: var(--bg1);
+	}
+	.setting-hotkey {
+		background-color: transparent;
+		border: 1px solid var(--tx1);
 	}
 	.suggestion-container {
 		border-width: 3px;
@@ -44,6 +65,10 @@
 	.markdown-rendered code,
 	.cm-s-obsidian span.cm-inline-code {
 		font-weight: 600;
+	}
+	.tree-item-self:hover,
+	.tree-item-self.is-active {
+		--icon-color: var(--bg1);
 	}
 	.metadata-property-icon {
 		--icon-color-focused: var(--tx1);
@@ -57,6 +82,14 @@
 			--toggle-thumb-color: var(--bg1);
 		}
 	}
+	&.tabs-modern .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active,
+	&.labeled-nav .mod-left-split .mod-top .workspace-tab-header.is-active:not(:hover) {
+		background-color: var(--tx1);
+	}
+	&.labeled-nav .mod-left-split .mod-top .workspace-tab-header.is-active,
+	&.labeled-nav .mod-left-split .mod-top .workspace-tab-header:hover,
+	&.is-focused.tabs-modern .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+	#calendar-container .reset-button:hover,
 	.status-bar .plugin-sync:hover .sync-status-icon.mod-success,
 	.status-bar .plugin-sync:hover .sync-status-icon.mod-working,
 	.status-bar-item.mod-clickable:hover,
@@ -67,12 +100,24 @@
 	.markdown-rendered mark,
 	.suggestion-item.is-selected,
 	.horizontal-tab-nav-item:hover,
+	.search-result-file-matched-text,
 	.vertical-tab-nav-item:hover,
+	.mod-root .workspace-tab-header-status-icon,
+	.mod-root .workspace-tab-header:hover,
 	&:not(.colorful-active) .horizontal-tab-nav-item.is-active,
 	&:not(.colorful-active) .vertical-tab-nav-item.is-active,
-	button,
+	button.mod-cta,
+	.search-result-file-match:hover,
 	select:hover, .dropdown:hover {
 		color: var(--bg1);
+	}
+
+	.is-flashing {
+		--text-highlight-bg: #999
+	}
+
+	#calendar-container .day:hover {
+		--color-dot: var(--bg1);
 	}
 }
 
@@ -108,14 +153,13 @@
 
 	--background-modifier-cover: rgba(235,235,235,1);
 }
-.theme-light.minimal-eink-light.minimal-light-white {
-	--bg3:#fff;
-}
+
 .theme-light.minimal-eink-light.minimal-light-contrast .titlebar,
 .theme-light.minimal-eink-light.minimal-light-contrast.minimal-status-off .status-bar,
 .theme-light.minimal-eink-light.minimal-light-contrast .workspace-drawer.mod-left,
 .theme-light.minimal-eink-light.minimal-light-contrast .mod-left-split,
 .theme-light.minimal-eink-light.minimal-light-contrast .workspace-ribbon.mod-left:not(.is-collapsed),
+.theme-light.minimal-eink-light.minimal-light-contrast .theme-dark,
 .theme-dark.minimal-eink-dark {
 	--base-h:0;
 	--base-s:0%;
@@ -145,18 +189,45 @@
 	--sp1:#000;
 
 	--background-modifier-cover: rgba(20,20,20,1);
+
+	--vault-profile-color: var(--tx1);
+	--vault-profile-color-hover: var(--bg1);
+	--nav-item-color-hover: var(--bg1);
+	--nav-item-color-active: var(--bg1);
 }
 .theme-light.minimal-eink-light.minimal-light-tonal {
 	--bg3:#bbb;
 	--ui1:#bbb;
-
-	--modal-border-color: var(--ui1);
-	--prompt-border-color: var(--ui1);
+	--tx3:#999;
 }
 .theme-dark.minimal-eink-dark.minimal-dark-tonal {
 	--bg3:#444;
 	--ui1:#444;
+	--tx3:#999;
+}
+.theme-light.minimal-eink-light.minimal-light-tonal,
+.theme-dark.minimal-eink-dark.minimal-dark-tonal {
+	--hl2: var(--bg3);
 
 	--modal-border-color: var(--ui1);
 	--prompt-border-color: var(--ui1);
+	--tag-border-color: var(--ui1);
+	--text-selection: var(--bg3);
+	--icon-color-active: var(--tx1);
+	--icon-color-focused: var(--tx1);
+	--nav-item-color-active: var(--tx1);
+	--nav-item-color-hover: var(--tx1);
+	--minimal-tab-text-color-active: var(--tx1);
+
+	.is-flashing,
+	.search-result-file-matched-text {
+		background-color: var(--bg3);
+		color: var(--tx1);
+	}
+	::selection,
+	#calendar-container .reset-button:hover,
+	&:not(.colorful-active) .vertical-tab-nav-item:hover,
+	&:not(.colorful-active) .vertical-tab-nav-item.is-active {
+		color: var(--tx1);
+	}
 }

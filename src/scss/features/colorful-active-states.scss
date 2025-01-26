@@ -4,6 +4,14 @@
 	.nav-files-container {
 		--nav-item-background-active: var(--interactive-accent);
 		--nav-item-color-active: var(--text-on-accent);
+
+		.is-active .nav-file-tag {
+			color: var(--text-on-accent);
+			opacity: 0.6;
+		}
+	}
+	.tree-item-self.is-being-renamed:focus-within {
+		--nav-item-color-active: var(--text-normal);
 	}
 
 	#calendar-container {
@@ -26,7 +34,7 @@ body:not(.colorful-active) {
 
 	.horizontal-tab-nav-item.is-active,
 	.vertical-tab-nav-item.is-active {
-		background-color: var(--background-modifier-hover);
+		background-color: var(--bg3);
 		color: var(--text-normal);
 	}
 

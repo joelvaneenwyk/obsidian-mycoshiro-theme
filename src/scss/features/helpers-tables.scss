@@ -9,11 +9,17 @@
 }
 
 .row-hover {
-	--table-edge-cell-padding-first: 10px;
+	--table-edge-cell-padding-first: 8px;
+	--table-edge-cell-padding-last: 8px;
+	--table-row-background-hover: var(--hl1);
+	--table-row-alt-background-hover: var(--hl1);
 }
+
 .row-alt {
 	--table-row-alt-background: var(--background-table-rows);
-	--table-edge-cell-padding-first: 10px;
+	--table-row-alt-background-hover: var(--background-table-rows);
+	--table-edge-cell-padding-first: 8px;
+	--table-edge-cell-padding-last: 8px;
 }
 .col-alt .markdown-rendered:not(.cards) {
 	--table-column-alt-background: var(--background-table-rows);
@@ -23,17 +29,37 @@
 	font-variant-numeric: tabular-nums;
 }
 
+.table-center {
+	.markdown-preview-view .markdown-preview-sizer table,
+	&.markdown-preview-view .markdown-preview-sizer table,
+	.markdown-source-view.mod-cm6 .table-wrapper,
+	&.markdown-source-view.mod-cm6 .table-wrapper {
+		margin: 0 auto;
+	}
+}
+
 .table-lines {
 	--table-border-width: var(--border-width);
 	--table-header-border-width: var(--border-width);
 	--table-column-first-border-width: var(--border-width);
 	--table-column-last-border-width:var(--border-width);
 	--table-row-last-border-width: var(--border-width);
-	--table-edge-cell-padding: 10px;
+	--table-edge-cell-padding: 8px;
+	--table-edge-cell-padding-first: 8px;
+	--table-edge-cell-padding-last: 8px;
+	--table-add-button-border-width: 1px;
 }
 
 .table-nowrap {
 	--table-white-space: nowrap;
+}
+.table-nowrap-first {
+	table {
+		thead > tr > th:first-child,
+		tbody > tr > td:first-child {
+			--table-white-space: nowrap;
+		}
+	}
 }
 
 .trim-cols,
@@ -42,28 +68,51 @@
 }
 
 .table-numbers {
+	--table-numbers-padding-right: 0.5em;
+
 	table:not(.calendar) {
 		counter-reset:section;
-		> thead > tr > th:first-child::before {
-			content:" ";
-			padding-right:0.5em;
-			display:inline-block;
-			min-width:2em;
+		> thead > tr > th:first-child {
+			white-space: nowrap;
+			&::before {
+				content: " ";
+				padding-right: var(--table-numbers-padding-right);
+				display: inline-block;
+				min-width: 2em;
+			}
+			.table-cell-wrapper,
+			.cm-s-obsidian {
+				display: inline-block;
+				min-width: 10px;
+			}
 		}
-		> tbody > tr > td:first-child::before {
-			counter-increment: section;
-			content: counter(section) " ";
-			text-align: center;
-			padding-right: 0.5em;
-			display: inline-block;
-			min-width: 2em;
-			color: var(--text-faint);
-			font-variant-numeric: tabular-nums;
+		&:not(.table-editor) > tbody > tr > td:first-child,
+		&.table-editor > tbody > tr > td:first-child .table-cell-wrapper {
+			white-space: nowrap;
+			&::before {
+				counter-increment: section;
+				content: counter(section) " ";
+				text-align: center;
+				padding-right: var(--table-numbers-padding-right);
+				display: inline-block;
+				min-width: 2em;
+				color: var(--text-faint);
+				font-variant-numeric: tabular-nums;
+			}
+			.cm-s-obsidian {
+				display: inline-block;
+				min-width: 10px;
+			}
 		}
+	}
+	.table-editor {
+		--table-numbers-padding-right: 0;
 	}
 }
 
 .row-lines-off {
+	--table-row-last-border-width: 0;
+
 	table:not(.calendar) tbody > tr > td,
 	.table-view-table > tbody > tr > td,
 	table:not(.calendar) tbody > tr:last-child > td {
@@ -71,13 +120,13 @@
 	}
 }
 
-.row-lines {
-	table:not(.calendar) tbody > tr > td,
-	.table-view-table > tbody > tr > td {
+.row-lines:not(.table-lines) .markdown-source-view:not(.cards),
+.row-lines:not(.table-lines) .markdown-preview-view:not(.cards) {
+	--table-row-last-border-width: 0px;
+
+	table:not(.calendar) tbody > tr:not(:last-child) > td,
+	.table-view-table > tbody > tr:not(:last-child) > td {
 		border-bottom: var(--table-border-width) solid var(--table-border-color);
-	}
-	table:not(.calendar) tbody > tr:last-child > td {
-		border-bottom:none;
 	}
 }
 
@@ -88,26 +137,3 @@
 		border-right: var(--table-border-width) solid var(--background-modifier-border);
 	}
 }
-
-/* Highlight rows on hover */
-.row-hover {
-	--table-row-background-hover:
-	hsla(
-		var(--accent-h),
-		50%,
-		80%, 
-		20%
-		);
-}
-
-.theme-dark.row-hover,
-.theme-dark .row-hover {
-	--table-row-background-hover:
-		hsla(
-			var(--accent-h),
-			30%,
-			40%, 
-			20%
-			);
-}
-

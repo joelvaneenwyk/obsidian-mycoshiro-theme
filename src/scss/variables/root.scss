@@ -18,8 +18,6 @@ body {
 
 	/* Font weights */
 	--normal-weight: 400;
-	--bold-weight: 600;
-	--link-weight: inherit;
 
 	/* Headings */
 	--inline-title-margin-bottom: 1rem;
@@ -55,6 +53,7 @@ body {
 	/* Line widths */
 	--line-width: 40rem;
 	--line-height: 1.5;
+	--line-height-normal: var(--line-height);
 	--max-width: 88%;
 	--max-col-width: 18em;
 
@@ -74,6 +73,8 @@ body {
 	--header-height: 40px;
 
 	/* Metadata */
+	--metadata-label-width-multiplier: 9;
+	--metadata-label-width: calc(var(--font-adaptive-small) * var(--metadata-label-width-multiplier));
 	--metadata-label-font-size: var(--font-adaptive-small);
 	--metadata-input-font-size: var(--font-adaptive-small);
 
@@ -93,6 +94,14 @@ body {
 
 	--border-width: 1px;
 	--table-border-width: var(--border-width);
+
+	--table-selection: var(--text-selection);
+	--table-selection-border-color: var(--text-accent);
+	--table-selection-border-width: 0px;
+	--table-selection-border-radius: 0px;
+	--table-drag-handle-background-active: var(--text-selection);
+	--table-drag-handle-color-active: var(--text-accent);
+	--table-add-button-border-width: 0px;
 
 	/* Readable line length off */
 	--file-margins: var(--size-4-2) var(--size-4-12);

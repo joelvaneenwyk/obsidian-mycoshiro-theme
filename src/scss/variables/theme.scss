@@ -19,6 +19,8 @@
 	--background-modifier-border-hover:  var(--ui2);
 	--background-modifier-border:        var(--ui1);
 
+	--mobile-sidebar-background:         var(--bg1);
+
 	--background-modifier-form-field-highlighted: var(--bg1);
 	--background-modifier-form-field:    var(--bg1);
 	--background-modifier-success:       var(--color-green);
@@ -52,13 +54,12 @@
 
 	--list-marker-color:                 var(--tx3);
 
-	--modal-border-color:                var(--ui2);
-
 	--nav-item-background-active:        var(--bg3);
 	--nav-item-background-hover:         var(--bg3);
 	--nav-item-color:                    var(--tx2);
 	--nav-item-color-active:             var(--tx1);
 	--nav-item-color-hover:              var(--tx1);
+	--nav-item-color-selected:           var(--tx1);
 
 	--nav-collapse-icon-color:           var(--tx2);
 	--nav-collapse-icon-color-collapsed: var(--tx2);
@@ -92,6 +93,8 @@
 	--text-on-accent:                    var(--sp1);
 	--text-selection:                    var(--hl1);
 
+	--text-formatting:                   var(--tx3);
+
 	--title-color-inactive:              var(--tx2);
 	--title-color:                       var(--tx1);
 
@@ -99,7 +102,17 @@
 	--titlebar-background-focused:       var(--bg2);
 	--titlebar-text-color-focused:       var(--tx1);
 
+	--vault-profile-color:               var(--tx1);
+	--vault-profile-color-hover:         var(--tx1);
+
 	--workspace-background-translucent:  hsla(var(--base-h),var(--base-s), var(--base-l), 0.7);
+}
+
+.theme-dark,
+.theme-light {
+	.view-actions {
+		--icon-color-active:             var(--ax1);	
+	}
 }
 
 .theme-light.minimal-light-contrast {
@@ -115,18 +128,18 @@
 	--interactive-normal:         var(--bg1);
 	--interactive-accent-rgb:220, 220, 220;
 
-	--active-line-bg:rgba(0,0,0,0.035);
+	--active-line-bg: rgba(0,0,0,0.035);
 	--background-modifier-cover:hsla(var(--base-h),calc(var(--base-s) - 70%),calc(var(--base-l) - 20%),0.5);
 
-	--text-highlight-bg-active:rgba(0, 0, 0, 0.1);
+	--text-highlight-bg-active: rgba(0, 0, 0, 0.1);
 
 	/* Errors */
-	--background-modifier-error:rgba(255,0,0,0.14);
-	--background-modifier-error-hover:rgba(255,0,0,0.08);
+	--background-modifier-error: rgba(255,0,0,0.14);
+	--background-modifier-error-hover: rgba(255,0,0,0.08);
 
 	/* Shadows */
-	--shadow-color:rgba(0, 0, 0, 0.1);
-	--btn-shadow-color:rgba(0, 0, 0, 0.05);
+	--shadow-color: rgba(0, 0, 0, 0.1);
+	--btn-shadow-color: rgba(0, 0, 0, 0.05);
 }
 
 .theme-dark {
@@ -136,16 +149,17 @@
 	--active-line-bg: rgba(255,255,255,0.04);
 	--background-modifier-cover: hsla(var(--base-h),var(--base-s), calc(var(--base-l) - 12%), 0.5);
 
-	--text-highlight-bg-active:rgba(255, 255, 255, 0.1);
+	--text-highlight-bg-active: rgba(255, 255, 255, 0.1);
 
 	/* Errors */
-	--background-modifier-error:rgba(255,20,20,0.12);
-	--background-modifier-error-hover:rgba(255,20,20,0.18);
+	--background-modifier-error: rgba(255,20,20,0.12);
+	--background-modifier-error-hover: rgba(255,20,20,0.18);
 
 	/* Shadows */
-	--background-modifier-box-shadow:rgba(0, 0, 0, 0.3);
-	--shadow-color:rgba(0, 0, 0, 0.3);
-	--btn-shadow-color:rgba(0, 0, 0, 0.2);
+	--background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--btn-shadow-color: rgba(0, 0, 0, 0.2);
+	--modal-border-color: var(--ui2);
 }
 
 .theme-light.minimal-light-white {
@@ -169,9 +183,9 @@
 	--background-table-rows:     var(--bg3);
 	--modal-border:              var(--ui2);
 
-	--active-line-bg:rgba(255,255,255,0.085);
+	--active-line-bg: rgba(255,255,255,0.085);
 
 	--background-modifier-form-field: var(--bg3);
 	--background-modifier-cover:hsla(var(--base-h),var(--base-s),calc(var(--base-d) + 8%),0.9);
-	--background-modifier-box-shadow:rgba(0, 0, 0, 1);
+	--background-modifier-box-shadow: rgba(0, 0, 0, 1);
 }

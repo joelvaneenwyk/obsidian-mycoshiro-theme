@@ -8,17 +8,13 @@ body {
 /* Strict embeds (naked) */
 .embed-strict {
 	--embed-background: transparent;
+	--embed-border-start: 0;
 	--embed-border-left: 0;
 	--embed-padding: 0;
 
 	.markdown-embed-content {
 		--folding-offset: 0px;
 	}
-	.el-embed-heading.el-p > p {
-		margin-block-start: 0;
-		margin-block-end: 0;
-	}
-
 	.internal-embed .markdown-embed,
 	.markdown-preview-view .markdown-embed,
 	&.markdown-preview-view .markdown-embed {
